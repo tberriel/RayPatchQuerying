@@ -9,26 +9,26 @@ Official implementation of the paper ["Ray-Patch: An Efficient Querying for Ligh
 ### MSN-Easy - $60\times 80$
 | Run | PSNR | SSIM | LPIPS | Rendering Speed | Checkpoint |
 |---|---|---|---|---|---|
-|`srt` |30.98 | 0.903 | 0.173 | 117 fps |[Link](https://drive.google.com/file/d/18xN2D5PNHpWIBoV28ylzWln3cMW71l5u)|
-|`RP-srt k=2` |31.16| 0.906 | 0.163 | 288 fps |[Link](https://drive.google.com/file/d/1q1KQ47EzhJflB9QTgAIKJb6R3vnLb-oK)|
-|`RP-srt k=4` |30.92| 0.901 | 0.175 | 341 fps |[Link](https://drive.google.com/file/d/1ssTLIRKFRL4923uG6lxuUFnvMDkfvlVL)|
+|`srt` |30.98 | 0.903 | 0.173 | 117 fps ||
+|`RP-srt k=2` |31.16| 0.906 | 0.163 | 288 fps ||
+|`RP-srt k=4` |30.92| 0.901 | 0.175 | 341 fps ||
 
 ### MSN-Easy - $120\times160$ 
 
 | Run | PSNR | SSIM | LPIPS | Rendering Speed | Checkpoint |
 |---|---|---|---|---|---|
-|`srt` |32.842| 0.935 | 0.250 | 192 fps |[Link](https://drive.google.com/file/d/16CSyko7DI3rM2WLQIdQGBC_GSN2S579T)|
-|`RP-srt k=4` |32.818| 0.935 | 0.254 | 275 fps |[Link](https://drive.google.com/file/d/16CSyko7DI3rM2WLQIdQGBC_GSN2S579T)|
-|`RP-srt k=8` |32.306| 0.929 | 0.274 | 305 fps |[Link](https://drive.google.com/file/d/16CSyko7DI3rM2WLQIdQGBC_GSN2S579T)|
-|`osrt` |30.95| 0.916 | 0.287 | 21 fps |[Link](https://drive.google.com/file/d/16CSyko7DI3rM2WLQIdQGBC_GSN2S579T)|
-|`RP-osrt k=8` |31.03| 0.915 | 0.303 | 278 fps |[Link](https://drive.google.com/file/d/16CSyko7DI3rM2WLQIdQGBC_GSN2S579T)|
+|`srt` |32.842| 0.935 | 0.250 | 192 fps |[Link](https://drive.google.com/file/d/1nJ7506fFm_xC1wKwyulIQ-pm4CkWnYx8/view)|
+|`RP-srt k=4` |32.818| 0.935 | 0.254 | 275 fps |[Link](https://drive.google.com/file/d/1kz9yj8d_4WCFDGw3eJjE1nHYPcscJ0bg/view)|
+|`RP-srt k=8` |32.306| 0.929 | 0.274 | 305 fps |[Link](https://drive.google.com/file/d/12pgck8Ymn7B6LTxV844cJwZz93g1WUbJ/view)|
+|`osrt` |30.95| 0.916 | 0.287 | 21 fps |[Link](https://drive.google.com/file/d/1drZ4cPrxxsNREO78OrB4K_uIG4B8RTiP/view)|
+|`RP-osrt k=8` |31.03| 0.915 | 0.303 | 278 fps |[Link](https://drive.google.com/file/d/1yr3tuGkK1fn1iT7-ShWhqx2c3YejxW0B/view)|
 
 
 ### ScanNet - In $240\times320$/Out $480\times640$
 |Run | PSNR | SSIM | LPIPS | RMSE | Abs.Rel. | Square Rel.| Rendering Speed | Download |
 |---|---|---|---|---|---|---|---|---|
-|`DeFiNe`| 23.46 | 0.783 | 0.495 | 0.275 | 0.108 | 0.053 | 7 fps |[Link](https://drive.google.com/file/d/16CSyko7DI3rM2WLQIdQGBC_GSN2S579T)|
-|`RP-DeFiNe k=16`| 24.54 | 0.801 | 0.453 | 0.263 | 0.103 | 0.050 | 208 fps |[Link](https://drive.google.com/file/d/1dHyWDXGYsRx9cpe93hslr8gDKwoi37yq)|
+|`DeFiNe`| 23.46 | 0.783 | 0.495 | 0.275 | 0.108 | 0.053 | 7 fps |[Link](https://drive.google.com/file/d/1C_RYqYXeNJjsO26ihZk3GZhMVxrNg4jQ/view)|
+|`RP-DeFiNe k=16`| 24.54 | 0.801 | 0.453 | 0.263 | 0.103 | 0.050 | 208 fps |[Link](https://drive.google.com/file/d/1UtyNxAwj1B6kGWS8MpqtfYdUUsnu2pjS/view)|
 
 
 ## Setup
