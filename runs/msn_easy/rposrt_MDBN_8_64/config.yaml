@@ -1,0 +1,45 @@
+data:
+  dataset: msn_easy
+  num_points: 9600
+  kwargs:
+    canonical_view: false
+    target_reduced: 8
+    h: 120
+    w: 160
+model:
+  base: osrt
+  encoder_kwargs:
+    max_pooling: false
+    pos_start_octave: -5
+    num_conv_blocks: 3
+    num_att_blocks: 5
+    num_slots: 5
+    norm: Batch
+    latent_dim: 1536
+  decoder: featurefield
+  decoder_kwargs:
+    pos_start_octave: -5
+  rp_kwargs:
+    out_dims: 3
+    norm: Batch
+    upsample: 3
+    h_in: 15
+    w_in: 20
+    h_out: 120
+    w_out: 160
+  lr_config: linear
+  lr: 0.0001
+  decay_it: 4000000
+  lr_warmup: 2500
+  gamma: 0.16
+training:
+  num_workers: 12
+  batch_size: 64
+  model_selection_metric: psnr
+  model_selection_mode: max
+  print_every: 100
+  visualize_every: 5000
+  validate_every: 5000
+  checkpoint_every: 1000
+  backup_every: 50000
+  max_it: 300000

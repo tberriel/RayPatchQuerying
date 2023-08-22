@@ -1,0 +1,47 @@
+
+data:
+  dataset: scannet
+  num_points: 8192
+  kwargs:
+    setting: stereo
+    load_all_data: False
+    canonical_view: True
+    target_reduced: 16
+    mask_non_vis: False
+    virtual_cameras: True
+    pose_jittering: True
+    h_rgb_in: 128
+    w_rgb_in: 192
+    h_rgb_tar: 480
+    w_rgb_tar: 640
+    h_rgb_un: 480
+    w_rgb_un: 640
+model:
+  base: define
+  encoder_kwargs:
+    pos_start_octave: 1
+    num_att_blocks: 8
+  decoder: featurefield
+  decoder_kwargs:
+    pos_start_octave: 1
+  rp_kwargs:
+    h_in: 30
+    w_in: 40
+    upsample: 4
+    norm: Batch
+  lr_config: step
+  lr: 0.0002
+  lr_warmup: 2500  
+
+training:
+  num_workers: 10
+  batch_size: 16
+  model_selection_metric: rmse_d
+  model_selection_mode: min
+  print_every: 100
+  visualize_every: 5000
+  validate_every: 5000
+  checkpoint_every: 1000
+  backup_every: 100000
+  max_it: 612000
+  decay_it: 612000
