@@ -5,7 +5,7 @@ import argparse
 import yaml
 
 from src import data
-from src.model import SRT, DeFiNe, ESRT, OSRT
+from src.model import SRT, DeFiNe, OSRT
 from src.utils.visualizer import Visualizer
 
 from src.model import SRT
@@ -110,8 +110,6 @@ if __name__ == '__main__':
         cfg['model']['wandb'] = args.wandb
     if cfg["model"]["base"] == "define":
         model = DeFiNe
-    elif cfg["model"]["base"] == "esrt":
-        model = ESRT
     elif cfg["model"]["base"] == "osrt":
         model = OSRT
     else:

@@ -420,39 +420,6 @@ class DeFiNe(GenericModel):
         frequency = 1
         return [optimizer], [{"scheduler":scheduler, "interval":interval, "frequency":frequency, 'name':'lr'}]
 
-class ESRT(GenericModel):
-    def __init__(self, cfg, log_id = None, time_elapsed=0., lpips = False, ssim = False):
-        super().__init__(cfg, log_id, time_elapsed, lpips, ssim)
-        self.encoder = ESRTEncoder(**cfg['encoder_kwargs'])
-        self.decoder_rp = RayPatchDecoder(**cfg['rp_kwargs'])
-        out_dims_att = cfg['rp_kwargs'].get("conv_features", 128)
-
-        cfg['decoder_kwargs']["out_dims"] = out_dims_att
-        self.decoder_att = SRTDecoder( **cfg['decoder_kwargs'])
-
-        if ['depth']:
-            self.loss_depth = nn.ModuleDict({
-                "abs_logd": MeanAbsoluteError(), 
-                })
-
-            self.val_metrics_depth = nn.ModuleDict({
-                'absDiff_d': AbsoluteRelativeDifference(pred_log=True, target_log=True), 
-                'squareDiff_d': SquareRelativeDifference(pred_log=True, target_log=True),
-                'rmse_d': MeanSquaredError(squared=False)
-                })
-
-        self.save_hyperparameters()
-
-    def decoder(self, z, target_camera_pos, target_rays, **kwargs):
-        output = self.decoder_rp(self.decoder_att(z, target_camera_pos, target_rays, **kwargs))
-        if len(output.shape)>3:
-            output = output.flatten(1,3)
-        out_dict = dict()
-        if output.shape[2] == 4 :
-            out_dict["logdepth"] = output[...,3]
-            output = output[...,:3]
-        return  torch.sigmoid(output), out_dict
-
 
 class OSRT(GenericModel):
     def __init__(self, cfg, log_id = None, time_elapsed=0., lpips = False, ssim = False):
