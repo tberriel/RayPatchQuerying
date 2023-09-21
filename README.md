@@ -6,14 +6,16 @@ Official implementation of the paper ["Ray-Patch: An Efficient Querying for Ligh
 <img src="https://drive.google.com/uc?export=view&id=1-0clAkYwOCGMF0BOM71ij9Tv0NUJg6Q7" alt="Architecture" width="512"/>
 
 ## Results
-### MSN-Easy - $60\times 80$
-| Run | PSNR | SSIM | LPIPS | Rendering Speed | Checkpoint |
-|---|---|---|---|---|---|
-|`srt` |30.98 | 0.903 | 0.173 | 117 fps ||
-|`RP-srt k=2` |31.16| 0.906 | 0.163 | 288 fps ||
-|`RP-srt k=4` |30.92| 0.901 | 0.175 | 341 fps ||
+### MSN-Easy 
+* $60\times 80$
 
-### MSN-Easy - $120\times160$ 
+| Run | PSNR | SSIM | LPIPS | Rendering Speed | 
+|---|---|---|---|---|
+|`srt` |30.98 | 0.903 | 0.173 | 117 fps |
+|`RP-srt k=2` |31.16| 0.906 | 0.163 | 288 fps |
+|`RP-srt k=4` |30.92| 0.901 | 0.175 | 341 fps |
+
+* $120\times160$
 
 | Run | PSNR | SSIM | LPIPS | Rendering Speed | Checkpoint |
 |---|---|---|---|---|---|
@@ -24,7 +26,9 @@ Official implementation of the paper ["Ray-Patch: An Efficient Querying for Ligh
 |`RP-osrt k=8` |31.03| 0.915 | 0.303 | 278 fps |[Link](https://drive.google.com/file/d/1yr3tuGkK1fn1iT7-ShWhqx2c3YejxW0B/view)|
 
 
-### ScanNet - In $240\times320$/Out $480\times640$
+### ScanNet 
+* In $240\times320$/Out $480\times640$
+
 |Run | PSNR | SSIM | LPIPS | RMSE | Abs.Rel. | Square Rel.| Rendering Speed | Download |
 |---|---|---|---|---|---|---|---|---|
 |`DeFiNe`| 23.46 | 0.783 | 0.495 | 0.275 | 0.108 | 0.053 | 7 fps |[Link](https://drive.google.com/file/d/1C_RYqYXeNJjsO26ihZk3GZhMVxrNg4jQ/view)|
